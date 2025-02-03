@@ -1,31 +1,19 @@
-
+import { View, Text } from 'react-native'
 import React from 'react'
-import { Tabs } from 'expo-router'
-import Colors from '@/constants/Colors'
-import { View } from 'react-native-reanimated/lib/typescript/Animated'
+import { Link } from 'expo-router'
 
 const Page = () => {
   return (
-    <Tabs 
-    screenOptions={{
-        tabBarActiveTintColor: Colors.primary,
-        tabBarLabelStyle: {
-            fontFamily: 'mon-sb',
-        }
-    }}>
-        <Tabs.Screen
-         name="index"
-          options={{
-            tabBarLabel: 'Explore',
-
-          }
-          } />
-    </Tabs>   
+    <View>
+    
+     <Link href= {"/(modals)/login"}> Login </Link> 
+     <Link href= {"/(modals)/booking"}>Book here </Link>
+     <Link href = {"/listing/[id]"}> Listing details</Link>
 
 
-
-
-     )
+      
+    </View>
+  )
 }
 
 export default Page
