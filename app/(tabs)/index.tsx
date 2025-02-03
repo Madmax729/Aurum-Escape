@@ -1,31 +1,31 @@
-import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import React from 'react'
+import { Tabs } from 'expo-router'
+import Colors from '@/constants/Colors'
+import { View } from 'react-native-reanimated/lib/typescript/Animated'
 
-export default function TabOneScreen() {
+const Page = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
-  );
+    <Tabs 
+    screenOptions={{
+        tabBarActiveTintColor: Colors.primary,
+        tabBarLabelStyle: {
+            fontFamily: 'mon-sb',
+        }
+    }}>
+        <Tabs.Screen
+         name="index"
+          options={{
+            tabBarLabel: 'Explore',
+
+          }
+          } />
+    </Tabs>   
+
+
+
+
+     )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+export default Page
