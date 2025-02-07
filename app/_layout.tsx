@@ -5,11 +5,35 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { Touchable, TouchableOpacity } from 'react-native';
+import { Touchable, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import 'react-native-reanimated';
 import { useRouter } from 'expo-router';
+import * as SecureStore from 'expo-secure-store';
+import { useAuth } from '@clerk/clerk-expo';
 
 // import { useColorScheme } from '@/components/useColorScheme';
+
+const CLERK_PUBLISHABLE_KEY = process.env.CLERK_PUBLISHABLE_KEY;
+
+const tokenCache = {
+  async getToken(key: string){
+    try{
+      return SecureStore.getItemAsync(key);
+} catch (err) {
+  return null;
+
+  }
+
+},
+async saveToken(key: string, value: string){
+  try{
+    return SecureStore.setItemAsync(key, value);
+  } catch (err) {
+    return null;
+  }
+}
+};
+
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,6 +76,8 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const router = useRouter();
 
+  const {isLoaded , isSignedIn} = useAuth();
+
   return (
    
       <Stack>
@@ -74,7 +100,13 @@ function RootLayoutNav() {
  <Stack.Screen name="(modals)/booking" 
  options={{
   presentation: 'transparentModal',
-  animation: 'fade'
+  animation: 'fade',
+  headerLeft: () => (
+    <TouchableOpacity onPress={() => router.back()}>
+      <Ionicons name="close-outline" size={24} color="black" />
+    </TouchableOpacity>
+  ),
+ 
  }} />
   
   
