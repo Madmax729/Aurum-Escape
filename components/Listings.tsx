@@ -4,7 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import Animated, { FadeInRight, FadeOutLeft } from 'react-native-reanimated';
 import { useEffect, useRef, useState } from 'react';
-import { BottomSheetFlatList, BottomSheetFlatListMethods } from '@gorhom/bottom-sheet';
+import Colors from '@/constants/Colors';
+// import { BottomSheetFlatList, BottomSheetFlatListMethods } from '@gorhom/bottom-sheet';
 
 interface Props {
   listings: any[];
@@ -13,19 +14,19 @@ interface Props {
 }
 
 const Listings = ({ listings: items, refresh, category }: Props) => {
-  const listRef = useRef<BottomSheetFlatListMethods>(null);
+  // const listRef = useRef<BottomSheetFlatListMethods>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   // Update the view to scroll the list back top
   useEffect(() => {
     if (refresh) {
-      scrollListTop();
+      // scrollListTop();
     }
   }, [refresh]);
 
-  const scrollListTop = () => {
-    listRef.current?.scrollToOffset({ offset: 0, animated: true });
-  };
+  // const scrollListTop = () => {
+  //   listRef.current?.scrollToOffset({ offset: 0, animated: true });
+  // };
 
   // Use for "updating" the views data after category changed
   useEffect(() => {
@@ -64,12 +65,13 @@ const Listings = ({ listings: items, refresh, category }: Props) => {
 
   return (
     <View style={defaultStyles.container}>
-      <BottomSheetFlatList
+      {/* <BottomSheetFlatList
         renderItem={renderRow}
         data={loading ? [] : items}
         ref={listRef}
         ListHeaderComponent={<Text style={styles.info}>{items.length} homes</Text>}
-      />
+      /> */}
+      <Text style={{backgroundColor:Colors.primary}}> listing </Text>
     </View>
   );
 };
