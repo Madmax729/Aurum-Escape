@@ -5,6 +5,8 @@ const Page = () => {
   return (
     <View>
       <Text>Wishlist</Text>
+    <Text> What's stopping you , pack the bag and let's go</Text>
+
     </View>
   )
 }
