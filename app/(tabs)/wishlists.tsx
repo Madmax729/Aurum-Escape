@@ -6,6 +6,7 @@ const Page = () => {
     <View>
       <Text>Wishlist</Text>
     <Text> What's stopping you , pack the bag and let's go</Text>
+    <Text> Make the itenary </Text>
 
     </View>
   )
