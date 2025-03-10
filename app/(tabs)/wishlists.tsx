@@ -9,6 +9,8 @@ const Page = () => {
     <Text> Make the itenary </Text>
     <Text> Day 2</Text>
     <Text> Day 3</Text>
+    <Text> Day 4</Text>
+
 
 
     </View>
