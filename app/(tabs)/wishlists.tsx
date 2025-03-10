@@ -8,6 +8,8 @@ const Page = () => {
     <Text> What's stopping you , pack the bag and let's go</Text>
     <Text> Make the itenary </Text>
     <Text> Day 2</Text>
+    <Text> Day 3</Text>
+
 
     </View>
   )
