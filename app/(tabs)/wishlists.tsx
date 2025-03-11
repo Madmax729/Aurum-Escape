@@ -10,6 +10,8 @@ const Page = () => {
     <Text> Day 2</Text>
     <Text> Day 3</Text>
     <Text> Day 4</Text>
+    <Text> Day 5</Text>
+
 
 
 
