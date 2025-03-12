@@ -12,6 +12,8 @@ const Page = () => {
     <Text> Day 4</Text>
     <Text> Day 5</Text>
     <Text> Day 6</Text>
+    <Text> Day 7</Text>
+
 
 
 
