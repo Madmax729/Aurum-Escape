@@ -4,7 +4,7 @@ import React from 'react'
 const Page = () => {
   return (
     <View>
-      <Text>Wishlist</Text>
+    <Text>Wishlist</Text>
     <Text> What's stopping you , pack the bag and let's go</Text>
     <Text> Make the itenary </Text>
     <Text> Day 2</Text>
@@ -18,6 +18,8 @@ const Page = () => {
     <Text> Day 10</Text>
     <Text> Day 11</Text>
     <Text> Day 12</Text>
+    <Text> Day 13</Text>
+
 
 
 
